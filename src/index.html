@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>team4</title>
+    <link rel="stylesheet" href="css/swiper-4.1.6.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <script src="js/flexible.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <form>
+                <i class="iconfont icon-fangdajing"></i>
+                <input type="text" placeholder="面膜">
+            </form>
+            <dl>
+                <dt><i class="iconfont icon-shouqi-01"></i></dt>
+                <dd>分类</dd>
+            </dl>
+        </header>
+        <nav class="nav">
+            <ul>
+                <li>家具</li>
+                <li>8.01家电节</li>
+                <li>母婴</li>
+                <li>生活</li>
+                <li>唯品-奢</li>
+                <li>计划6</li>
+                <li>计划7</li>
+                <li>计划8</li>
+                <li>计划9</li>
+                <li>计划10</li>
+                <li>计划11</li>
+                <li>计划12</li>
+                <li>计划13</li>
+                <li>计划14</li>
+                <li>计划15</li>
+                <li>计划16</li>
+                <li>计划17</li>
+                <li>计划18</li>
+                <li>计划19</li>
+                <li>计划20</li>
+                <li>计划15</li>
+                <li>计划16</li>
+                <li>计划17</li>
+                <li>计划18</li>
+                <li>计划19</li>
+                <li>计划20</li>
+                <li>计划15</li>
+                <li>计划16</li>
+                <li>计划17</li>
+                <li>计划18</li>
+                <li>计划19</li>
+                <li>计划20</li>
+            </ul>
+        </nav>
+        <div class="swiper-container auto">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/banner.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="list">
+            <div class="one">
+                <img src="img/9.jpg" alt="">
+                <h4>送货入住</h4>
+                <p>免费安装</p>
+            </div>
+            <div class="one">
+                <img src="img/9.jpg" alt="">
+                <h4>送货入住</h4>
+                <p>免费安装</p>
+            </div>
+            <div class="one">
+                <img src="img/9.jpg" alt="">
+                <h4>送货入住</h4>
+                <p>免费安装</p>
+            </div>
+        </div>
+        <div class="kong">
+            <ul>
+                <li><img src="img/f.png" alt=""></li>
+                <li><img src="img/f.png" alt=""></li>
+                <li><img src="img/f.png" alt=""></li>
+                <li><img src="img/f.png" alt=""></li>
+            </ul>
+            <ol>
+                <li>空调</li>
+                <li>空调</li>
+                <li>空调</li>
+                <li>空调</li>
+
+            </ol>
+        </div>
+        <div class="main">
+            <img src="img/11.jpg" alt="">
+        </div>
+        <footer>
+            <ul>
+                <li class="active"><i class="iconfont icon-shouye"></i>首页</li>
+                <li><i class="iconfont icon-tianmao1"></i>微选</li>
+                <li><i class="iconfont icon-shoucang"></i>购物圈</li>
+                <li><i class="iconfont icon-gouwuche"></i>购物车</li>
+                <li><i class="iconfont icon-geren"></i>个人中心</li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper-4.1.6.min.js"></script>
+<script src="js/bscroll.min.js"></script>
+<script>
+    //swiper
+    var mySwiper = new Swiper('.auto', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    })
+
+    //bscoll
+    $('.nav ul li').on('click', function() {
+        mySwiper.slideTo($(this).index())
+    })
+    var sum = 0;
+    $('.nav>ul>li').each(function(i, v) {
+        sum += $(v).innerWidth()
+    });
+    $('.nav>ul').width(sum + "px");
+    var scroll = new BScroll('.nav', {
+        scrollX: true,
+        scrollY: false,
+        click: true
+    });
+    $('.nav>ul').on('click', 'li', function() {
+        $(this).addClass('bg').siblings().removeClass('bg');
+        scroll.scrollToElement(this, 1000, true);
+    })
+</script>
+
+</html>
